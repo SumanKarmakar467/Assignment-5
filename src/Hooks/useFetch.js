@@ -5,7 +5,7 @@ const useFetch = (url) => {
     const [data, setData] = useState([]);
     // store theloading data
     const [loading, setLoading] = useState(true);
-    // store the errors
+    // store the error data
     const [error, setError] = useState(null);
 
     useEffect(() => {
@@ -13,7 +13,7 @@ const useFetch = (url) => {
         
         .then((response) => {
             if(!response.ok){
-                throw new Error("Failed to fetch data");
+                throw new Error("Error: Failed to Fetch");
             }
             return response.json();
         })
