@@ -3,7 +3,7 @@ import "./App.css";
 
 function App() {
   // call the useFetch function & give the URL
-  const { data, loading, error } = useFetch(  
+  const { data, loading, error, refetch } = useFetch(
     "https://api.escuelajs.co/api/v1/products",
   );
 
@@ -21,6 +21,9 @@ function App() {
     return (
       <div className="status">
         <p>{error}</p>
+        <button className="retry-button" onClick={refetch}>
+          Try again
+        </button>
       </div>
     );
   }
