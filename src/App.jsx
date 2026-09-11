@@ -1,4 +1,3 @@
-import { useState } from "react";
 import useFetch from "./Hooks/useFetch";
 import "./App.css";
 
