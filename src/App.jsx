@@ -25,6 +25,14 @@ function App() {
     );
   }
 
+  if (data.length === 0) {
+    return (
+      <div className="status">
+        <h3>No products found</h3>
+      </div>
+    );
+  }
+
   return (
     <div>
       <h1 className="heading">
