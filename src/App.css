@@ -63,3 +63,15 @@ body {
   color: white;
   font-size: 22px;
 }
+
+@media (max-width: 1024px) {
+  .products-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .products-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
