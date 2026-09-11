@@ -9,8 +9,12 @@ const useFetch = (url) => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
+        let ignore = false;
+
+        setLoading(true);
+        setError(null);
+
         fetch(url)
-        
         .then((response) => {
             if(!response.ok){
                 throw new Error("Error: Failed to Fetch");
@@ -18,13 +22,19 @@ const useFetch = (url) => {
             return response.json();
         })
         .then((result) => {
+            if (ignore) return;
             setData(result);
             setLoading(false);
         })
         .catch((err) => {
+            if (ignore) return;
             setError(err.message);
             setLoading(false);
         });
+
+        return () => {
+            ignore = true;
+        };
     },[url]);
 
     // return this variable stores data's
