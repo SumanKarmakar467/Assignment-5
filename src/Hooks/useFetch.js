@@ -20,7 +20,7 @@ const useFetch = (url) => {
         fetch(url)
         .then((response) => {
             if(!response.ok){
-                throw new Error("Error: Failed to Fetch");
+                throw new Error("Errr: Failed to Fetch");
             }
             return response.json();
         })
